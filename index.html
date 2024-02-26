@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Home Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div>
+    <div id = "main">
+      <h1>Name Fluency</h1>
+      </br>
+      <p>The fluency of a name is defined as the ease by which a person's brain is able to process and pronounce it. This website will test the subjectivity of fluency in order to further understand personal lexical preferences.</p>
+      <p><b>Please only interact with this site if you are a current student of Brooklyn Technical High School.</b></p>
+      <p>Press the link below and follow the instructions on the following page. This should take <b>no more than 2 minutes</b> to complete.</p>
+      <p>Only interact with the website once. The data collected will remain anonymous.<p>
+      </br>
+      <a href="studentNames.html">
+          <button class="button">Continue</button>
+      </a>
+      </br>
+      </br>
+      <p>Thank you in advance for your contributions. If you have any questions or concerns, be sure to contact Sonam Thukral at sthukral6331@bths.edu.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "",
+    authDomain: "ap-research-project-c861d.firebaseapp.com",
+    projectId: "ap-research-project-c861d",
+    storageBucket: "ap-research-project-c861d.appspot.com",
+    messagingSenderId: "774215097786",
+    appId: "1:774215097786:web:359685496049be85a71183",
+    measurementId: "G-NZD34ERCPS"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+  
+</body>
+
+</html>
