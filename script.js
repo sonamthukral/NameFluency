@@ -72,8 +72,8 @@ function submit() {
     console.log(selectedNames.length);
     alert("Please select 5 items.");
     return;
-  } "
-  window.location.href = ""
+  }
+  window.location.href = "studentFinal.html";
   database.ref('data').set({
     list: selectedNames,
   });
