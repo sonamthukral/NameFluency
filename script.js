@@ -17,11 +17,11 @@ let selectedNames = []
 let nameData = [
   { "name": "Yefim" }, { "name": "Young" }, { "name": "Weiping" }, { "name": "Rosio" }, { "name": "Michael" }, { "name": "Kelvin" }, { "name": "Ayanna" }, { "name": "Xuejung" },
 
-  { "name": "Willie" }, { "name": "Jose" }, { "name": "Maria" }, { "name": "Woon" },  { "name": "Hung" },  { "name": "Ivory" },  { "name": "Wendee" },  { "name": "Robert" },
+  { "name": "Willie" }, { "name": "Jose" }, { "name": "Maria" }, { "name": "Woon" }, { "name": "Hung" }, { "name": "Ivory" }, { "name": "Wendee" }, { "name": "Robert" },
 
-  { "name": "Vahik" },  { "name": "John" },  { "name": "David" },  { "name": "Juan" },  { "name": "Tomeka" },  { "name": "Mohammad" },  { "name": "Shui" },  { "name": "Earnestine" },
+  { "name": "Vahik" }, { "name": "John" }, { "name": "David" }, { "name": "Juan" }, { "name": "Tomeka" }, { "name": "Mohammad" }, { "name": "Shui" }, { "name": "Earnestine" },
 
-  { "name": "Reginald" },  { "name": "Lisandro" },  { "name": "Witold" },  { "name": "Obdulia" },  { "name": "Octaviano" },  { "name": "Tyrone" },  { "name": "Wei" },  { "name": "Carlos" }
+  { "name": "Reginald" }, { "name": "Lisandro" }, { "name": "Witold" }, { "name": "Obdulia" }, { "name": "Octaviano" }, { "name": "Tyrone" }, { "name": "Wei" }, { "name": "Carlos" }
 ]
 
 function createGrid(data) {
@@ -31,6 +31,9 @@ function createGrid(data) {
   }
   return grid;
 }
+
+
+
 
 function makeAGrid() {
   const grid = createGrid(nameData);
@@ -69,10 +72,10 @@ function submit() {
     console.log(selectedNames.length);
     alert("Please select 5 items.");
     return;
-  }
-  window.location.href = "studentFinal.html";
+  } "
+  window.location.href = ""
   database.ref('data').set({
-    list: selectedNames
+    list: selectedNames,
   });
 }
 
