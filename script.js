@@ -62,8 +62,8 @@ function makeAGrid() {
   document.getElementById("start").style.visibility = "hidden";
 }
 
-var firebaseConfig = {
-  apiKey: "",
+const firebaseConfig = {
+  apiKey: "AIzaSyAxob9aavktWfoiB4tSSQFPMbxmCHUaA_A",
   authDomain: "ap-research-project-c861d.firebaseapp.com",
   projectId: "ap-research-project-c861d",
   storageBucket: "ap-research-project-c861d.appspot.com",
@@ -71,6 +71,8 @@ var firebaseConfig = {
   appId: "1:774215097786:web:359685496049be85a71183",
   measurementId: "G-NZD34ERCPS"
 };
+
+import { initializeApp } from 'firebase/app';
 
 firebase.initializeApp(firebaseConfig);
 
