@@ -72,7 +72,7 @@ const firebaseConfig = {
   measurementId: "G-NZD34ERCPS"
 };
 
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'firebase/app';
 
 firebase.initializeApp(firebaseConfig);
 
