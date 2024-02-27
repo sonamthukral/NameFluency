@@ -57,6 +57,7 @@ html {
 #citation {
   font-size: 10px;
   font-family: Verdana, Geneva, sans-serif;
+  position: fixed;
   bottom: 10px;
   background-color: white;
 }
