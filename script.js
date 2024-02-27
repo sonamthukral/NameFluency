@@ -62,21 +62,21 @@ function makeAGrid() {
   document.getElementById("start").style.visibility = "hidden";
 }
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAxob9aavktWfoiB4tSSQFPMbxmCHUaA_A",
-  authDomain: "ap-research-project-c861d.firebaseapp.com",
-  projectId: "ap-research-project-c861d",
-  storageBucket: "ap-research-project-c861d.appspot.com",
-  messagingSenderId: "774215097786",
-  appId: "1:774215097786:web:359685496049be85a71183",
-  measurementId: "G-NZD34ERCPS"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAxob9aavktWfoiB4tSSQFPMbxmCHUaA_A",
+//   authDomain: "ap-research-project-c861d.firebaseapp.com",
+//   projectId: "ap-research-project-c861d",
+//   storageBucket: "ap-research-project-c861d.appspot.com",
+//   messagingSenderId: "774215097786",
+//   appId: "1:774215097786:web:359685496049be85a71183",
+//   measurementId: "G-NZD34ERCPS"
+// };
 
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'firebase/app';
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
-var database = firebase.database();
+// var database = firebase.database();
 
 function submit() {
   if (selectedNames.length != 8) {
