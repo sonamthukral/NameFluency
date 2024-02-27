@@ -32,9 +32,6 @@ function createGrid(data) {
   return grid;
 }
 
-
-
-
 function makeAGrid() {
   const grid = createGrid(nameData);
 
@@ -65,12 +62,24 @@ function makeAGrid() {
   document.getElementById("start").style.visibility = "hidden";
 }
 
+var firebaseConfig = {
+  apiKey: "",
+  authDomain: "ap-research-project-c861d.firebaseapp.com",
+  projectId: "ap-research-project-c861d",
+  storageBucket: "ap-research-project-c861d.appspot.com",
+  messagingSenderId: "774215097786",
+  appId: "1:774215097786:web:359685496049be85a71183",
+  measurementId: "G-NZD34ERCPS"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 var database = firebase.database();
 
 function submit() {
-  if (selectedNames.length != 5) {
+  if (selectedNames.length != 8) {
     console.log(selectedNames.length);
-    alert("Please select 5 items.");
+    alert("Please select 8 items.");
     return;
   }
   window.location.href = "studentFinal.html";
