@@ -1,5 +1,6 @@
 function initialize() {
   document.getElementById("finish").style.visibility = "hidden";
+  document.getElementById("deselect").style.visibility = "hidden";
 }
 
 let selectedNames = []
@@ -54,6 +55,7 @@ function makeAGrid() {
 
         document.getElementById("finish").style.visibility =
           selectedNames.length > 0 ? "visible" : "hidden";
+        document.getElementById("deselect").style.visibility = selectedNames.length > 0 ? "visible" : "hidden";
       });
     });
     gridBody.appendChild(row);
@@ -62,21 +64,18 @@ function makeAGrid() {
   document.getElementById("start").style.visibility = "hidden";
 }
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAxob9aavktWfoiB4tSSQFPMbxmCHUaA_A",
-//   authDomain: "ap-research-project-c861d.firebaseapp.com",
-//   projectId: "ap-research-project-c861d",
-//   storageBucket: "ap-research-project-c861d.appspot.com",
-//   messagingSenderId: "774215097786",
-//   appId: "1:774215097786:web:359685496049be85a71183",
-//   measurementId: "G-NZD34ERCPS"
-// };
+var database = firebase.database();
 
-// import { initializeApp } from 'firebase/app';
-
-// firebase.initializeApp(firebaseConfig);
-
-// var database = firebase.database();
+function deselect() {
+  selectedNames = [];
+  const gridItems = document.querySelectorAll('.selected');
+  gridItems.forEach(item => {
+    item.classList.remove('selected');
+  });
+  document.getElementById("finish").style.visibility =
+    selectedNames.length > 0 ? "visible" : "hidden";
+  document.getElementById("deselect").style.visibility = selectedNames.length > 0 ? "visible" : "hidden";
+}
 
 function submit() {
   if (selectedNames.length != 8) {
@@ -88,5 +87,39 @@ function submit() {
   database.ref('data').set({
     list: selectedNames,
   });
+  //console.log(database.ref('data').get())
+  database.ref('data').once('value', function(snapshot) {
+    var data = snapshot.val();
+    console.log(data.list);
+  });
 }
 
+
+/*
+function updateButtonState() {
+  const button1 = document.getElementById('button1');
+  const button2 = document.getElementById('button2');
+
+  const isSelectionComplete = selectedNames.length === 8;
+
+  button1.disabled = !isSelectionComplete;
+  button2.disabled = !isSelectionComplete;
+}
+
+// Call updateButtonState() whenever the selection changes
+// For example, at the end of the click event listener
+cell.addEventListener('click', function() {
+  this.classList.toggle('selected');
+  if (this.classList.contains('selected')) {
+    selectedNames.push(cellData.name);
+  } else {
+    selectedNames.splice(selectedNames.indexOf(cellData.name), 1);
+  }
+
+  document.getElementById("finish").style.visibility =
+    selectedNames.length > 0 ? "visible" : "hidden";
+
+  // Update button state
+  updateButtonState();
+});
+*/
