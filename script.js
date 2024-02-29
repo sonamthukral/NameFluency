@@ -34,6 +34,7 @@ function createGrid(data) {
 }
 
 function makeAGrid() {
+  disableSubmit();
   const grid = createGrid(nameData);
 
   const gridBody = document.getElementById('table');
@@ -52,10 +53,7 @@ function makeAGrid() {
         } else {
           selectedNames.splice(selectedNames.indexOf(cellData.name), 1)
         }
-
-        document.getElementById("finish").style.visibility =
-          selectedNames.length > 0 ? "visible" : "hidden";
-        document.getElementById("deselect").style.visibility = selectedNames.length > 0 ? "visible" : "hidden";
+        disableSubmit();
       });
     });
     gridBody.appendChild(row);
@@ -72,17 +70,18 @@ function deselect() {
   gridItems.forEach(item => {
     item.classList.remove('selected');
   });
-  document.getElementById("finish").style.visibility =
-    selectedNames.length > 0 ? "visible" : "hidden";
-  document.getElementById("deselect").style.visibility = selectedNames.length > 0 ? "visible" : "hidden";
+  disableSubmit();
+}
+
+function disableSubmit() {
+  const isSelectionComplete = selectedNames.length === 8;
+  const submitButton = document.getElementById("finish");
+  submitButton.disabled = !isSelectionComplete;
+  document.getElementById("finish").style.visibility = "visible";
+  document.getElementById("deselect").style.visibility = "visible";
 }
 
 function submit() {
-  if (selectedNames.length != 8) {
-    console.log(selectedNames.length);
-    alert("Please select 8 items.");
-    return;
-  }
   window.location.href = "studentFinal.html";
   database.ref('data').set({
     list: selectedNames,
@@ -94,32 +93,6 @@ function submit() {
   });
 }
 
-
-/*
-function updateButtonState() {
-  const button1 = document.getElementById('button1');
-  const button2 = document.getElementById('button2');
-
-  const isSelectionComplete = selectedNames.length === 8;
-
-  button1.disabled = !isSelectionComplete;
-  button2.disabled = !isSelectionComplete;
+function alertSubmit() {
+  alert("Response submitted.");
 }
-
-// Call updateButtonState() whenever the selection changes
-// For example, at the end of the click event listener
-cell.addEventListener('click', function() {
-  this.classList.toggle('selected');
-  if (this.classList.contains('selected')) {
-    selectedNames.push(cellData.name);
-  } else {
-    selectedNames.splice(selectedNames.indexOf(cellData.name), 1);
-  }
-
-  document.getElementById("finish").style.visibility =
-    selectedNames.length > 0 ? "visible" : "hidden";
-
-  // Update button state
-  updateButtonState();
-});
-*/
